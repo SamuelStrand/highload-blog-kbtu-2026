@@ -1,0 +1,3 @@
+trial,protocol,operation,concurrency,requests,successes,errors,error_rate,duration_s,successful_rps,p50_ms,p95_ms,p99_ms,request_bytes,response_bytes_median,http_version_verified
+1,HTTP/1.1,get_post,20,100,100,0,0.0,0.4547221000011632,219.9145368121413,45.394549999999995,293.280035,350.37268600000016,0,2219.0,True
+1,HTTP/2,get_post,20,100,100,0,0.0,0.19152310000026773,522.1302286766463,30.106949999999998,73.00125,76.16626500000001,0,2219.0,True

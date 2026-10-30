@@ -1,0 +1,32 @@
+{
+  "purpose": "Real TLS idempotency and retry demonstration",
+  "checks": [
+    {
+      "check": "cross_protocol_replay",
+      "id": "22ef6d4c-45b8-4c25-8fbc-c6114c7715f2",
+      "versions": [
+        "HTTP/1.1",
+        "HTTP/2"
+      ],
+      "response_bytes": 45,
+      "passed": true
+    },
+    {
+      "check": "changed_body_conflict",
+      "status": 409,
+      "passed": true
+    },
+    {
+      "check": "identical_get_payload",
+      "response_bytes": 211,
+      "passed": true
+    },
+    {
+      "check": "timeout_after_commit_then_retry",
+      "attempts": 2,
+      "stored_resources": 1,
+      "id": "49d70039-6c63-43e8-9162-f4ae529d6f95",
+      "passed": true
+    }
+  ]
+}

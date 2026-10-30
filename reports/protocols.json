@@ -1,0 +1,10 @@
+[
+  {
+    "http_version": "HTTP/1.1",
+    "status": 200
+  },
+  {
+    "http_version": "HTTP/2",
+    "status": 200
+  }
+]

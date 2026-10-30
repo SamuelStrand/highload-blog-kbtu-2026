@@ -1,0 +1,1 @@
+"""Comments application components."""

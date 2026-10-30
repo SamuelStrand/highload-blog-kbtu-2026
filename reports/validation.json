@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "tests": 62,
+  "completed_trials": 36,
+  "measured_requests": 180000,
+  "errors": 0,
+  "raw_observations_sha256": "8a4f4b653ebf00f96e9f4c5a241b27cb0669147b34dc9a18b7eed2a7db523485",
+  "checks": [
+    "one observation per request index",
+    "all received protocol versions match",
+    "raw errors match trial counts",
+    "RPS matches successful requests and duration",
+    "matching JSON body sizes",
+    "PNG chart decodes",
+    "JUnit has no failures"
+  ],
+  "last_trial_database_counts": {
+    "users": 100,
+    "posts": 15200,
+    "comments": 20000,
+    "idempotency_records": 5200
+  },
+  "idle_in_transaction_after_benchmark": 0,
+  "database_restart_verified": true,
+  "repeat_setup_verified": true,
+  "markdown_links_verified": true,
+  "fresh_demo_verified": true
+}

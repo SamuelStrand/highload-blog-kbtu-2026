@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-10-30T18:18:05.954500+00:00",
+  "status": "failed",
+  "base_url": "https://localhost:8444",
+  "configuration": {
+    "base_url": "https://localhost:8444",
+    "requests": 5000,
+    "warmup": 200,
+    "repeats": 3,
+    "concurrency": [
+      1,
+      20
+    ],
+    "operations": [
+      "get_post",
+      "list_posts",
+      "create_post"
+    ],
+    "seed_users": 100,
+    "seed_posts": 10000,
+    "seed_comments": 20000,
+    "output": "reports\\runs\\full"
+  },
+  "environment": {
+    "os": "Windows-11-10.0.22631-SP0",
+    "python": "3.12.6",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "physical_cpu_count": 10,
+    "logical_cpu_count": 16,
+    "ram_bytes": 16778178560
+  },
+  "versions": {
+    "fastapi": "0.162.0",
+    "hypercorn": "0.18.0",
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "h2": "4.4.1",
+    "sqlalchemy": "2.1.6",
+    "asyncpg": "0.32.0",
+    "postgresql": "PostgreSQL 15.7, compiled by Visual C++ build 1939, 64-bit"
+  },
+  "server": {
+    "workers": 1,
+    "db_pool_size": 20,
+    "db_max_overflow": 0
+  },
+  "client": {
+    "connection_limits": "max_connections=max_keepalive_connections=concurrency",
+    "retries": 0,
+    "body_compression": false,
+    "timeout_seconds": {
+      "connect": 1,
+      "pool": 1,
+      "read": 2,
+      "write": 2
+    }
+  },
+  "dataset": {
+    "users": 100,
+    "posts": 10000,
+    "comments": 20000,
+    "post_body_bytes": 2048,
+    "comment_body_bytes": 256,
+    "reset_before_every_trial": true
+  },
+  "methodology": {
+    "latency": "HTTPX send through full response read, including connection pool wait",
+    "percentile": "linear interpolation, successful requests only",
+    "rps": "successful requests / full measured batch duration",
+    "header_sizes": "sum of field-name and value bytes, NOT wire/HPACK bytes",
+    "wire_size_measured": false,
+    "workload": "closed-loop fixed concurrency on localhost"
+  },
+  "error": "DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) canceling statement due to lock timeout\n[SQL: TRUNCATE TABLE idempotency_records, comments, posts, users]\n(Background on this error at: https://sqlalche.me/e/21/dbapi)",
+  "completed_trials": 2,
+  "finished_at": "2026-10-30T18:19:27.861928+00:00"
+}
