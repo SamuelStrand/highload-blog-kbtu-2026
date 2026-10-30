@@ -4,7 +4,7 @@
 
 The assignment requires a service interface using a justified protocol, with
 idempotency, timeouts and retries, plus latency and payload-size measurements
-against a REST/JSON baseline. **The instructor approved Python** for this submission.
+against a REST/JSON baseline.
 
 SIS-1 designed a Blog Platform supporting post publication, reading by ID,
 author feeds, comments and cursor pagination. It specified a REST/JSON public
@@ -217,13 +217,3 @@ verify that each read route has released its transaction at response start.
 The initial run is excluded from the final performance summary.
 Hypercorn documents the default connection limit as 1,000 requests.
 [Hypercorn configuration](https://hypercorn.readthedocs.io/en/latest/how_to_guides/configuring.html)
-
-## Reproduction
-
-From the repository root, run `uv sync --frozen` and `uv run --frozen blogctl setup`.
-Start `uv run --frozen blogctl serve --database bench --port 8444` in one terminal.
-In another, run `uv run --frozen blogctl benchmark --base-url https://localhost:8444`.
-The command creates a fresh output directory, preserving earlier runs.
-
-The [README](../README.md) gives setup, API, lifecycle and validation commands;
-[DEFENCE.md](DEFENCE.md) provides the live walkthrough.
